@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Youtube</title>
+  <link rel="icon" href="./images/youtube_premium.svg" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <style>
     #header {
@@ -19,7 +20,7 @@
       display: flex;
       /* 往上靠近但不完全貼近 */
       align-items: start;
-      background: #fff;
+      background: #ffffff;
 
       #menu_button {
         /* 讓選單按鈕移動過去有背景 */
@@ -187,7 +188,7 @@
       margin-top: 2%;
       /* 固定寬高 */
       width: 13%;
-      height: calc(100% - 56px);
+      height: calc(100% - 7%);
       /* 保持內容不移動 */
       position: fixed;
       /* 字體 */
@@ -285,18 +286,26 @@
 
     #container {
       /* 跟上面保持距離 */
-      margin-top: 3%;
+      margin-top: 2.9%;
       /* 設定寬高 */
       width: calc(100% - 13%);
-      height: calc(100% - 56px);
       /* 浮動右邊 */
       float: right;
 
       #list {
-        /* 讓內容並排，文字置中，往右推40px排版*/
+        /* 固定位置 */
+        position: fixed;
+        /* 並排按鈕 */
         display: flex;
+        /* 寬度拉滿，高度設定 */
+        width: 100%;
+        height: 5%;
+        /* 按鈕文字置中 */
         align-items: center;
-        margin-left: 40px;
+        /* 往右推 */
+        padding-left: 40px;
+        /* 設定背景 */
+        background: #ffffff;
 
         button {
           /* 往右推15px讓按鈕之間產生間隔 */
@@ -324,16 +333,16 @@
         /* 內容並排 */
         display: flex;
         /* 設定margin排版 */
-        margin-top: 30px;
+        margin-top: 50px;
         margin-left: 40px;
         /* 一行滿了往下一行排 */
         flex-wrap: wrap;
 
         .card {
           /* 設定寬 */
-          width: 30%;
+          width: 32%;
           /* 產生間距排版 */
-          margin-right: 3%;
+          margin-right: 1%;
           margin-bottom: 30px;
           height: 45vh;
 
