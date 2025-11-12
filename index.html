@@ -14,6 +14,7 @@
       top: 0;
       /* 寬度跟body一樣 */
       width: 100%;
+      height: 7%;
       /* 內容並排 */
       display: flex;
       /* 往上靠近但不完全貼近 */
@@ -179,6 +180,101 @@
         background: #e9e5e5;
       }
     }
+
+    #menu {
+      /* 往下移動 */
+      margin-top: 2%;
+      /* 固定寬高 */
+      width: 13%;
+      height: calc(100% - 56px);
+      /* 保持內容不移動 */
+      position: fixed;
+      /* 給垂直滾動軸 */
+      overflow-y: auto;
+      /* 字體 */
+      font-family: Roboto, "Noto Sans TC", Arial, sans-serif;
+
+      ul {
+        /* 把li的點去掉 */
+        list-style: none;
+        /* 把ul預設padding-left更改 */
+        padding-left: 5px;
+
+        /* icon大小 */
+        .material-symbols-outlined {
+          font-size: 25px;
+        }
+
+        /* icon後面自大小 */
+        span {
+          font-size: 15px;
+        }
+
+        li {
+          /* 內容並排 */
+          display: flex;
+          /* 中間間距 */
+          gap: 5%;
+          /* 置中 */
+          align-items: center;
+          /* 往左移動 */
+          margin-left: 5px;
+          /* 改變游標 */
+          cursor: pointer;
+          /* 拉長按鈕高度 */
+          line-height: 40px;
+          /* 邊角修改 */
+          border-radius: 10px;
+          /* 不用margin往右移動 */
+          text-indent: 10px;
+        }
+
+        li:hover {
+          /* 移過去變色 */
+          background: #d0d0d0;
+        }
+
+        .text {
+          /* 字體設定 */
+          font-size: 12px;
+          text-indent: 0;
+          /* 讓字體有寬度 */
+          display: inline-block;
+          width: 80%;
+          /* 調整間距 */
+          margin-left: 15px;
+          margin-bottom: 5px;
+        }
+      }
+
+      #menu_login {
+        /* 內容垂直置中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 設定寬度 */
+        width: 80px;
+        /* 背景白色 */
+        background: #fff;
+        /* 邊線類似yt */
+        border: 1px solid #d3d3d3;
+        /* 字體顏色 */
+        color: #1a73e8;
+        /* 邊角 */
+        border-radius: 40px;
+        /* 改變游標 */
+        cursor: pointer;
+        /* 登入按鈕位置 */
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+      }
+
+      #menu_login:hover {
+        /* 背景變色 */
+        background-color: #e8f0fe;
+      }
+    }
   </style>
 </head>
 
@@ -212,6 +308,113 @@
         <span id="login_text">登入</span>
       </button>
     </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li>
+        <span class="material-symbols-outlined">home</span>
+        <span>首頁</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">play_arrow</span>
+        <span>Shorts</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">subscriptions</span>
+        <span>訂閱內容</span>
+      </li>
+      <hr>
+      <li>
+        <span class="material-symbols-outlined">account_circle</span>
+        <span>個人中心</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">history</span>
+        <span>觀看紀錄</span>
+      </li>
+      <hr>
+      <span class="text">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</span>
+      <button id="menu_login">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span id="menu_login_text">登入</span>
+      </button>
+      <hr>
+      <li style="background: transparent; cursor: default;">探索</li>
+      <li>
+        <span class="material-symbols-outlined">music_note</span>
+        <span>音樂</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">movie</span>
+        <span>電影</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">podcasts</span>
+        <span>直播</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">sports_esports</span>
+        <span>遊戲</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">sports_esports</span>
+        <span>遊戲</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">emoji_events</span>
+        <span>體育</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">school</span>
+        <span>課程</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">podcasts</span>
+        <span>Podcast</span>
+      </li>
+      <hr>
+      <li style="background: transparent; cursor: default;">更多YOUTUBE功能</li>
+      <li>
+        <img src="./images/youtube_premium.svg" alt="YouTube Music" width="24" height="24">
+        <span>YouTube Premium</span>
+      </li>
+      <li>
+        <img src="./images/youtube_music.svg" alt="YouTube Music" width="24" height="24">
+        <span>YouTube Music</span>
+      </li>
+      <li>
+        <img src="./images/youtube_premium.svg" alt="YouTube Kids" width="24" height="24">
+        <span>YouTube Kids</span>
+      </li>
+      <hr>
+      <li>
+        <span class="material-symbols-outlined">settings</span>
+        <span>設定</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">flag</span>
+        <span>檢舉記錄</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">help</span>
+        <span>說明</span>
+      </li>
+      <li>
+        <span class="material-symbols-outlined">feedback</span>
+        <span>提供意見</span>
+      </li>
+      <hr>
+      <span class="text">
+        簡介 媒體 著作權 與我們聯絡 創作者 廣告 開發人員
+      </span>
+      <span class="text">
+        條款 隱私權 政策與安全性 YouTube 運作方式 測試新功能
+      </span>
+      <span class="text">
+        &copy; 2025 Google LLC
+      </span>
+    </ul>
+
   </div>
 </body>
 
