@@ -8,69 +8,176 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <style>
     #header {
+      /* 固定表頭 */
       position: fixed;
+      /* 固定在最上面 */
       top: 0;
+      /* 寬度跟body一樣 */
       width: 100%;
+      /* 內容並排 */
       display: flex;
-    }
+      /* 往上靠近但不完全貼近 */
+      align-items: start;
 
-    #start {
-      margin: 15px;
-    }
+      #menu_button {
+        /* 讓選單按鈕移動過去有背景 */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* 讓裡面的漢堡置中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    #start img {
-      margin-left: 10px;
-      height: 30px;
-    }
+      #start {
+        /* 定位位置 */
+        margin-top: 10px;
+        margin-left: 15px;
+        /* 讓 menu 與圖片同排 */
+        display: flex;
+        /* 垂直置中對齊 */
+        align-items: center;
+      }
 
-    #searchbar {
-      margin-left: 20%;
-      margin-top: 15px;
-      width: 35%;
-      position: relative;
-      align-items: center;
-      border-right: 0;
-      background-color: #fff;
-      padding: 0 4px 0 16px;
-      display: flex;
-    }
+      #start img {
+        /* 與漢堡推移距離 */
+        margin-left: 10px;
+        /* 設定youtubelogo大小 */
+        height: 30px;
+      }
 
-    #searchbar form {
-      position: relative;
-      align-items: center;
-      border-right: 0;
-      background-color: #fff;
-      box-shadow: inset 0 1px 2px #eee;
-      display: flex;
-      width: 100%;
-      cursor: text;
-    }
+      #searchbar {
+        /* 不用position定位input位置 */
+        margin-left: 20%;
+        margin-top: 10px;
+        /* 總長寬度 */
+        width: 35%;
+        /* 內容並排 */
+        display: flex;
+        /* 置中 */
+        align-items: center;
 
-    #searchbar input {
-      border: 1px solid #c6c6c6;
-      margin: 0;
-      width: 100%;
-      border-radius: 40px 0 0 40px;
+      }
 
-      font-size: 1.6rem;
-      line-height: 2.7rem;
-      font-weight: 400;
-    }
+      #searchbar form {
+        /* 右邊沒邊線跟搜尋鈕貼再一起不突兀 */
+        border-right: 0;
+        /* 跟div一樣寬 */
+        width: 100%;
 
-    #button {
-      border: 1px solid #d3d3d3;
-      background-color: #f8f8f8;
-      border-radius: 0 40px 40px 0;
-      justify-content: center;
-      cursor: pointer;
-      width: 80px;
-      height: 48px;
-      border-radius: 0 40px 40px 0;
-    }
+      }
 
-    .material-symbols-outlined {
-      font-size: 36px;
+      #searchbar input {
+        /* 給類似input的邊線 */
+        border: 1px solid #c6c6c6;
+        /* 跟form一樣寬 100%邊線會延到按鈕*/
+        width: 99%;
+        /* 前面圓角後面尖角為了跟搜尋鈕貼 */
+        border-radius: 40px 0 0 40px;
+        /* 裡面placehoder字形設定 */
+        font-size: 1.2rem;
+        text-indent: 1rem;
+        /* input高度 */
+        line-height: 2.0rem;
+      }
 
+      #searchbar input:focus {
+        /* 變成youtube藍色 */
+        border: 1px solid #1a73e8;
+        /* outline沒關會變成黑+藍 */
+        outline: none
+      }
+
+      #search_button {
+        /* 跟前面一樣邊框色 */
+        border: 1px solid #d3d3d3;
+        /* 類似yt按鈕顏色 */
+        background-color: #f8f8f8;
+        /* 右邊圓角 */
+        border-radius: 0 40px 40px 0;
+        /* 按鈕大小視覺能貼近搜尋框 */
+        width: 70px;
+        height: 36px;
+      }
+
+      #mic_button {
+        /* 按照youtube mic的icon設定 */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        /* 垂直置中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 無邊線 */
+        border: 0;
+        /* 跟左邊保持距離 */
+        margin-left: 15px;
+      }
+
+      #end {
+        /* 定位位置 */
+        margin-top: 10px;
+        margin-left: 25%;
+        /* 內容並排 */
+        display: flex;
+        /* 改變游標 */
+        cursor: pointer;
+      }
+
+      #vert {
+        /* 垂直置中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 背景白色 */
+        background: #fff;
+        /* 無邊線 */
+        border: 0;
+      }
+
+      #login {
+        /* 內容垂直置中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 設定寬度 */
+        width: 100px;
+        /* 背景白色 */
+        background: #fff;
+        /* 邊線類似yt */
+        border: 1px solid #d3d3d3;
+        /* 字體顏色 */
+        color: #1a73e8;
+        /* 邊角 */
+        border-radius: 40px;
+        /* 改變游標 */
+        cursor: pointer;
+      }
+
+      #login_text {
+        /* 字體大小 */
+        font-size: 20px;
+      }
+
+      #login:hover {
+        /* 背景變色 */
+        background-color: #e8f0fe;
+      }
+
+      /* 給header google font icon 固定的樣式 */
+      .material-symbols-outlined {
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      /* 按鈕變色 */
+      #search_button:hover,
+      #mic_button:hover,
+      #menu_button:hover {
+        background: #e9e5e5;
+      }
     }
   </style>
 </head>
@@ -78,10 +185,9 @@
 <body>
   <div id="header">
     <div id="start">
-      <span class="material-symbols-outlined">
-        menu
-      </span>
-
+      <div id="menu_button">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
       <a href="./index.html">
         <img src="./images/youtubelogo.png" alt="Youtube首頁" title="Youtube首頁">
       </a>
@@ -90,10 +196,20 @@
       <form>
         <input type="text" placeholder="搜尋">
       </form>
-      <button id="button">
-        <span class="material-symbols-outlined">
-          search
-        </span>
+      <button id="search_button" title="搜尋">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button id="mic_button" title="使用語音搜尋">
+        <span id="mic_icon" class="material-symbols-outlined">mic</span>
+      </button>
+    </div>
+    <div id="end">
+      <button id="vert">
+        <span class="material-symbols-outlined" title="設定">more_vert</span>
+      </button>
+      <button id="login">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span id="login_text">登入</span>
       </button>
     </div>
   </div>
