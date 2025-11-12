@@ -19,6 +19,7 @@
       display: flex;
       /* 往上靠近但不完全貼近 */
       align-items: start;
+      background: #fff;
 
       #menu_button {
         /* 讓選單按鈕移動過去有背景 */
@@ -189,10 +190,12 @@
       height: calc(100% - 56px);
       /* 保持內容不移動 */
       position: fixed;
-      /* 給垂直滾動軸 */
-      overflow-y: auto;
       /* 字體 */
       font-family: Roboto, "Noto Sans TC", Arial, sans-serif;
+      /* 浮動左邊 */
+      float: left;
+      /* 產生y滾軸 */
+      overflow-y: auto;
 
       ul {
         /* 把li的點去掉 */
@@ -279,6 +282,112 @@
         background-color: #e8f0fe;
       }
     }
+
+    #container {
+      /* 跟上面保持距離 */
+      margin-top: 3%;
+      /* 設定寬高 */
+      width: calc(100% - 13%);
+      height: calc(100% - 56px);
+      /* 浮動右邊 */
+      float: right;
+
+      #list {
+        /* 讓內容並排，文字置中，往右推40px排版*/
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+
+        button {
+          /* 往右推15px讓按鈕之間產生間隔 */
+          margin-right: 15px;
+          /* 改變游標 */
+          cursor: pointer;
+          /* 無邊線 */
+          border: 0;
+          /* 邊角圓弧 */
+          border-radius: 8px;
+          /* 透過改字型大小變更按鈕大小 */
+          font-size: 15px;
+          /* 讓按鈕和文字產生間距 */
+          padding: 5px 10px;
+        }
+
+        button:focus {
+          /* 點選後變成黑底白字 */
+          background: #000;
+          color: #fff;
+        }
+      }
+
+      .content {
+        /* 內容並排 */
+        display: flex;
+        /* 設定margin排版 */
+        margin-top: 30px;
+        margin-left: 40px;
+        /* 一行滿了往下一行排 */
+        flex-wrap: wrap;
+
+        .card {
+          /* 設定寬 */
+          width: 30%;
+          /* 產生間距排版 */
+          margin-right: 3%;
+          margin-bottom: 30px;
+          height: 45vh;
+
+          .channel-picture {
+            /* 固定圖片大小 */
+            width: 100%;
+            height: 70%;
+            /* 設定邊角 */
+            border-radius: 20px;
+            /* 往下推排版 */
+            margin-bottom: 5px;
+          }
+
+          .video-info {
+            /* 讓小圖和文字並排 */
+            display: flex;
+
+
+            .channel-icon {
+              /* 小圖寬高 */
+              width: 30px;
+              height: 30px;
+              /* 圓形 */
+              border-radius: 50%;
+              /* 間距排版 */
+              margin-top: 20px;
+              margin-right: 15px;
+              margin-left: 10px;
+            }
+
+            .text-info {
+              .title {
+                /* 間距排版 */
+                margin: 5px 0;
+              }
+
+              .channel,
+              .visited {
+                /* 間距排版 */
+                margin: 0 0 5px 0;
+              }
+            }
+          }
+        }
+
+        .card:hover {
+          border: 0;
+          background: rgba(0, 0, 0, 0.1);
+          box-shadow:
+            0 4px 10px 2px rgba(0, 0, 0, 0.1),
+            0 6px 20px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
   </style>
 </head>
 
@@ -361,8 +470,8 @@
         <span>遊戲</span>
       </li>
       <li>
-        <span class="material-symbols-outlined">sports_esports</span>
-        <span>遊戲</span>
+        <span class="material-symbols-outlined">feed</span>
+        <span>新聞</span>
       </li>
       <li>
         <span class="material-symbols-outlined">emoji_events</span>
@@ -419,6 +528,175 @@
       </span>
     </ul>
 
+  </div>
+  <div id="container">
+    <div id="list">
+      <button>全部</button>
+      <button>新聞</button>
+      <button>Podcast</button>
+      <button>直播中</button>
+      <button>音樂</button>
+      <button>遊戲</button>
+      <button>旅遊勝地</button>
+      <button>寵物</button>
+      <button>最新上傳</button>
+    </div>
+    <div class="content">
+      <div class="card">
+        <img src="./images/IMG_001.jpg" class="channel-picture">
+        <div class="video-info">
+          <img src="./images/BOOK.jpg" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">重生為麵攤老闆，這一世重回到巔峰</h3>
+            <p class="channel">XX說漫</p>
+            <p class="visited">觀看次數： 0 次 • 1 分鐘前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./images/IMG_002.jpg" class="channel-picture">
+        <div class="video-info">
+          <img src="./images/microsoft_logo.jpg" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">微軟大戰代碼</h3>
+            <p class="channel">fake_Microsoft</p>
+            <p class="visited">觀看次數： 0 次 • 58 分鐘前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 30 分鐘前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 42 分鐘前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 2 小時前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 10 小時前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 18 小時前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 1 年前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 1 年前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 1 年前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 2 年前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 4 年前</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/200/?random=10" class="channel-picture">
+        <div class="video-info">
+          <img src="https://picsum.photos/300/200/?random=10" class="channel-icon">
+          <div class="text-info">
+            <h3 class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At in sed laborum quae beatae
+              deleniti, voluptas doloremque omnis non! Maxime.</h3>
+            <p class="channel">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="visited">觀看次數： 0 次 • 1 分鐘前</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
